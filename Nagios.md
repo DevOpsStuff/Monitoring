@@ -74,9 +74,28 @@
    * 'cfg_file' - specifies config file to include: i.e hosts,services,contacts,etc..
    * 'cfg_dir'  - specifies directory to include,containing config files (\*.cfg) to process
    
-  **plugins**
+  **Plugins**
    
+   * `/etc/default/nagios3` - influences daemon-startup
+   * `/usr/share/nagios3/plugins` - Event handlers
+   * `/etc/nagios-plugins` - Contains pre-rolled checks
+   * `/usr/lib/nagios/plugins` - repository of varios checks: i.e 'check_tcp','check_icmp',etc.
+  
+  ***ICMP (PING) Monitoring***
+    
+   1) Ping Monitoring using: '/usr/lib/nagios/plugins/check_host -> check_ping'
+   2) Pre-defined templates to handle most monitors:
+       * 'generic-host' - checks target using ICMP with sensible defaults
+       * 'generic-host; - can be inherited by HOST Definition using: `use generic-host`
+   3) Hosts and various objects are read from   `/etc/nagios3/conf.d`.
    
-   
-   **Templates**
+  **Reloading Configurations**
+  
+    -  `/etc/init.d/nagios3 reload`
+    
+  ***TCP/UDP Monitoring*** 
+  
+    
+  **Templates**
+  
      Coming soon
