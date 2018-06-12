@@ -52,12 +52,31 @@
   
 ## Installation
 
+  **Features**
+  
+   1) Configures required items, including Apache Httpd
+   2) Auto-monitoring of localhost(127.0.0.1)
 
+   Note: Postfix or SMTP needs to be installed for e-mail configuration
+   
+  **Installations**
+  
+   1) `aptitude search nagios`
+   2) `aptitude install nagios3`
+   3) `dpkg -l | grep -i nagios3`
+   
 ## Configurations
 
    **Nagios.cfg**
    
-   It is the main file in the location `/etc/nagios/nagios.cfg`. When nagios starts up it checks the `nagios.cfg ` file to check the configuration.
+   It is the main file in the location `/etc/nagios3/nagios.cfg`. When nagios starts up it checks the `nagios.cfg ` file to check the configuration.
+   
+   * 'cfg_file' - specifies config file to include: i.e hosts,services,contacts,etc..
+   * 'cfg_dir'  - specifies directory to include,containing config files (\*.cfg) to process
+   
+  **plugins**
+   
+   
    
    **Templates**
-   
+     Coming soon
