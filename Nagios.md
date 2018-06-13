@@ -32,8 +32,8 @@
        
    4) **Optional Per-Object Monitoring schedule**
    5) **Scheduled Templates**
-   6) **Host Can have parent/chod dependency relationship**
-   7) **object Inheritance**
+   6) **Host Can have parent/child dependency relationship**
+   7) [**object Inheritance**](https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/3/en/objectinheritance.html)
    8) **Service Dependencies**
    9) **Varios Notification**
        * SMS
