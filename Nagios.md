@@ -96,6 +96,10 @@
   ***TCP/UDP Monitoring*** 
   
     
-  **Templates**
+  ***NRPE***
   
-     Coming soon
+   -  Install NRPE agent on the hosts
+        `aptitude install nagios-nrpe-server`
+   -  Configuration file for nrpe is `/etc/nagios/nrpe.cfg`  and in the configutaion file add the nagios master server ip address in the
+       allowed hosts.
+   
