@@ -18,7 +18,7 @@
        * Nagios XI - Commericial Monitoring Engine
        * plugins
        
-  3. **Object Definitions**
+  3. [**Object Definitions**](https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/3/en/objectdefinitions.html)
   
        * Hosts
        * Services - HTTP,SMTP,DNS,etc
