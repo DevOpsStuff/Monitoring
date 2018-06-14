@@ -95,11 +95,56 @@
     
   ***TCP/UDP Monitoring*** 
   
+## Three Kinds of Remote Execution
+
+  ***Check By SSH***
+    
+   - By default,`check_by_ssh` plugin is already in the plugin directory.
+   - This is a direct execution on the client machines.
     
   ***NRPE***
   
    -  Install NRPE agent on the hosts
         `aptitude install nagios-nrpe-server`
-   -  Configuration file for nrpe is `/etc/nagios/nrpe.cfg`  and in the configutaion file add the nagios master server ip address in the
-       allowed hosts.
+   -  Configuration file for nrpe is `/etc/nagios/nrpe.cfg`  and in the configutaion file add the nagios master server ip address in the allowed hosts.
+   -  Change the server address to "0.0.0.0"
+   _  A NRPE Daemon will be running on all the client machines.(Linux)
    
+   ***NCPA***
+   
+   - Cross Platform a Client side agent, no plugin required.
+   - NCPA Automatically measures
+       * CPU
+       * Memory (Swap & RAM)
+       * Network Utilization
+       * Disk Utilization
+   
+## Nagios At Scale, Distribute all the things
+
+  **Nagios Scaling**
+
+   - Nagios forks for each service check.
+   - `ps -fC nagios` will list multiple forks for service checks.
+   - Nagios puts all the forked requested responses to the `/usr/local/nagios/var/spool`.
+   
+   *Repear Operation*
+   
+   - Internal Nagios Operation
+   - Grabs check results from the spool directory.
+   - Serializing the processing of check results.
+  
+  To scale nagios effectively,
+    * Cheaper forking
+    * Faster Reaping
+  
+  *Passive Checks*
+  
+  - Eliminates forking altogether
+  - Making reaping faster and less expensive
+  
+  *Large Scale with Mod_Gearmen*
+  
+  - Uses Queuing Mechanism
+
+## 
+  
